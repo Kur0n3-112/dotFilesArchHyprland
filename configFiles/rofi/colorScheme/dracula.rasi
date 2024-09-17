@@ -29,7 +29,7 @@
     urgent:               @drac-red;
     handle-colour:        @drac-yel;
     alternate-background: @drac-pur;
-    border-colour:        @drac-ora;
+    border-colour:        @drac-red;
 
 active-background: @drac-bgd;
 active-foreground: @drac-fgd;

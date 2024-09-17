@@ -6,7 +6,7 @@
 
 * {
     background-color:      Black;
-    border-color:          White;
+    border-color:          #ff5555;
     text-color:           White;
     font:            "Jet Brains Mono Medium 12";
 }

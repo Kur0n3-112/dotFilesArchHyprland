@@ -29,44 +29,47 @@ dynamic_height=$(($dynamic_height > $max_height ? $max_height : $dynamic_height)
 
 # Launch yad with calculated width and height
 yad --width=$dynamic_width --height=$dynamic_height \
-	--center \
-	--title="Keybindings" \
-	--no-buttons \
-	--list \
-	--column=Key: \
-	--column=Description: \
-	--column=Command: \
-	--column=Type: \
-	--timeout-indicator=bottom \
-	"ESC" "close this app" "" "Indication" \
-	"=" "SUPER KEY (Windows Key)" "(SUPER KEY)" "Indication" \
-	" enter" "Terminal" "(kitty)" "Term" \
-	" SHIFT enter" "Scratch Terminal" "(kitty-pyprland)" "Term" \
-	" A" "Desktop Overview" "(AGS Overview)" "SeeDesktops" \
-	" D" "App Launcher" "(rofi-wayland)" "RofiLauncher" \
-	"ALT TAB" "App Switcher" "(rofi-wayland)" "RofiLauncher" \
-	" T" "Open File Manager" "(Thunar)" "FileExplorer" \
-	" Q" "Close active window" "(not kill)" "CloseWindow" \
-	" Shift Q " "Closes a specified window" "(window)" "CloseWindow" \
-	" Z" "Desktop Zoom" "(pyprland)" "Zoom+" \
-	" Alt V" "Clipboard Manager" "(cliphist)" "Clipboard" \
-	" B" "Hide/UnHide Waybar" "waybar" "Waybar" \
-	" ALT R" "Reload Waybar swaync Rofi" "CHECK NOTIFICATION FIRST!!!" "Reload" \
-	" SHIFT N" "Launch Notification Panel" "swaync Notification Center" "Waybar" \
-	" Print" "Screenshot" "(grim)" "Screenshot" \
-	" Shift Print" "Screenshot region" "(grim + slurp)" "Screenshot" \
-	" Shift S" "Screenshot region" "(swappy)" "ScreenShot" \
-	"ALT Print" "Screenshot active window" "active window only" "Screenshot" \
-	"CTRL ALT P" "Power-menu" "(wlogout)" "Powermenu" \
-	"CTRL ALT Del" "Hyprland Exit" "(SAVE YOUR WORK!!!)" "Close Hyprland" \
-	" F" "Fullscreen" "Toggles to full screen" "Fullscreen" \
-	" ALT L" "Toggle Dwindle | Master Layout" "Hyprland Layout" "LayoutChange" \
-	" Shift F" "Toggle float" "Single window" "LayoutChange" \
-	" ALT F" "Toggle all windows to float" "all windows" "LayoutChange" \
-	"SHIFT ALT L" "Switch Keyboard Layout" "use a script, in scripsDir" "KeyboardLayout" \
-	" G" "Toggle the windows into a group" "togglegroup" "GroupingWindows" \
-	" SHIFT B" "Exec bluetooth manager" "blueman-manager" "Bluetooth" \
-	" SHIFT M" "Exec music control app" "pavucontrol" "Sound/Music" \
-	" H" "Launch this app" "" "Hints!" \
-	"" "" "" ""
+  --center \
+  --title="Keybindings" \
+  --no-buttons \
+  --list \
+  --column=Key: \
+  --column=Description: \
+  --column=Command: \
+  --column=Type: \
+  --timeout-indicator=bottom \
+  "ESC" "close this app" "" "Indication" \
+  "=" "SUPER KEY (Windows Key)" "(SUPER KEY)" "Indication" \
+  " enter" "Terminal" "(kitty)" "Term" \
+  " SHIFT enter" "Scratch Terminal" "(kitty-pyprland)" "Term" \
+  " A" "Desktop Overview" "(AGS Overview)" "SeeDesktops" \
+  " D" "App Launcher" "(rofi-wayland)" "RofiLauncher" \
+  "ALT TAB" "App Switcher" "(rofi-wayland)" "RofiLauncher" \
+  " T" "Open File Manager" "(Thunar)" "FileExplorer" \
+  " Q" "Close active window" "(not kill)" "CloseWindow" \
+  " Shift Q " "Closes a specified window" "(window)" "CloseWindow" \
+  " Z" "Desktop Zoom" "(pyprland)" "Zoom+" \
+  " Alt V" "Clipboard Manager" "(cliphist)" "Clipboard" \
+  " B" "Hide/UnHide Waybar" "waybar" "Waybar" \
+  " ALT R" "Reload Waybar swaync Rofi" "CHECK NOTIFICATION FIRST!!!" "Reload" \
+  " SHIFT N" "Launch Notification Panel" "swaync Notification Center" "Waybar" \
+  " Print" "Screenshot" "(grim)" "Screenshot" \
+  " Shift Print" "Screenshot region" "(grim + slurp)" "Screenshot" \
+  " Shift S" "Screenshot region" "(swappy)" "ScreenShot" \
+  "ALT Print" "Screenshot active window" "active window only" "Screenshot" \
+  "CTRL ALT P" "Power-menu" "(wlogout)" "Powermenu" \
+  "CTRL ALT Del" "Hyprland Exit" "(SAVE YOUR WORK!!!)" "Close Hyprland" \
+  " F" "Fullscreen" "Toggles to full screen" "Fullscreen" \
+  " ALT L" "Toggle Dwindle | Master Layout" "Hyprland Layout" "LayoutChange" \
+  " Shift F" "Toggle float" "Single window" "LayoutChange" \
+  " ALT F" "Toggle all windows to float" "all windows" "LayoutChange" \
+  "SHIFT ALT L" "Switch Keyboard Layout" "use a script, in scripsDir" "KeyboardLayout" \
+  " G" "Toggle the windows into a group" "togglegroup" "GroupingWindows" \
+  "CTRL SHIFT RIGHT/LEFT" "Toggle or un-toggle the grouping of windows" "togglegroup" "GroupingWindows" \
+  " SHIFT B" "Exec bluetooth manager" "blueman-manager" "Bluetooth" \
+  " SHIFT M" "Exec music control app" "pavucontrol" "Sound/Music" \
+  " SHIFT T" "Toggle idle mode" "Hypridle" "Idle Mode" \
+  " ALT P" "Passthrough the keyboard to a VM" "VM" "Virtual Machine" \
+  " H" "Launch this app" "" "Hints!" \
+  "" "" "" ""
 #	"More tips:" "https://github.com/JaKooLit/Hyprland-Dots/wiki" "" ""

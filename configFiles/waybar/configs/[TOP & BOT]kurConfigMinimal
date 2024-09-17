@@ -19,7 +19,12 @@
 
 "modules-left": [	
   "custom/separator#line",
-  "group/motherboardKur2",
+  "cpu#kur2",
+  "custom/gpuUsage",
+	"memory#kur2",
+  "custom/CPUTemp#Kur",
+  "custom/gpuTemp",
+	"disk#kur2",
 	"custom/separator#line",
 	],
   
@@ -31,6 +36,7 @@
   "custom/separator#dot-line",
   "custom/idle_inhibitor",
   "custom/separator#line",
+  "custom/hint",
 	], 
 
 "modules-right": [
@@ -70,11 +76,12 @@
 
 "modules-center": [
   "custom/separator#line",
-	"clock#kur", 
+  "clock#kur",
   "custom/separator#line",
 	],
 
 "modules-right": [
+  "privacy",
   "custom/separator#line",
 	"hyprland/window#kur",
 	"tray",

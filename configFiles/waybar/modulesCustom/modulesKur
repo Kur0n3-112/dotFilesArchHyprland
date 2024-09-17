@@ -41,6 +41,7 @@
 		"3": [],
 		"4": [],
 		"5": [],
+		"6": [],
 	},
 	"format-icons": {
 		"1": "1",
@@ -169,6 +170,7 @@
 	"orientation": "horizontal",
 	"modules": [
 		"cpu#kur2",
+    "custom/gpuUsage",
 		"memory#kur2",
     "custom/CPUTemp#Kur",
     "custom/gpuTemp",
@@ -302,6 +304,7 @@
 "clock#kur": {
 	"interval": 1,
 	//"format": " {:%I:%M %p}", // AM PM format
+  "timezone": "Europe/Madrid",
 	"format": " {:%H:%M - %d %B, %A}",
 	//"format-alt": " {:%H:%M}",
   "tooltip-format": "{tz_list}<tt><small>{calendar}</small></tt>",
@@ -348,7 +351,7 @@
 },
 "cpu#kur2": {
 	"format": "󰍛 {usage}%",
-	"interval": 1,
+	"interval": 5,
 	"format-alt-click": "click",
 	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
 	"format-icons": [
@@ -488,7 +491,7 @@
 },
 "memory#kur2": {
 	"interval": 10,
-	"format": "󰾆 {used:0.1f}G",
+	"format": "  {used:0.1f}G",
 	"format-alt": "RAM: {percentage}%",
 	"format-alt-click": "click",
 	"tooltip": true,
@@ -875,8 +878,8 @@
 "tooltip": true,
 },
 "custom/CPUTemp#Kur": {
-"format": " {} ",
-  "interval": 5,
+"format": " {}",
+  "interval": 10,
   "exec": "sensors | grep k10temp-pci-00c3 -C 3 | grep Tccd1  | awk '{print $2}' | tr -d 'Tccd:' | tr -d ' ' | tr -d '+'",
   "tooltip": true,
 	"on-click-right": "kitty --title nvtop sh -c 'nvtop'",
@@ -1026,6 +1029,39 @@
 "custom/gpuTemp": {
     "exec": "nvidia-settings -q gpucoretemp -t",
     "format": "{}ºC",
-    "interval": 5,
+    "interval": 10,
+},
+"custom/gpuUsage": {
+    "exec": "nvidia-smi | grep Default | awk '{print $13}'",
+    "format": "󰢮 {}",
+    "interval": 10,
+},
+"custom/watch": {
+    "exec": "date '+%H:%M - %d %B %Y, %A'",
+    "format": "  {}",
+    "interval": 10,
+    "on-click": "~/.config/hypr/scripts/calendarRofi.sh"
+},
+"privacy": {
+	"icon-spacing": 4,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		}
+	]
 },
 }

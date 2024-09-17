@@ -1,0 +1,11 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Clipboard Config (long) - Clipboard */
+
+@import "~/.config/rofi/config-short.rasi"
+@import "~/.config/rofi/colorScheme.rasi"
+
+/* ---- Entry ---- */
+entry {
+  width: 25%;
+  placeholder: "Calendar of the month";
+}

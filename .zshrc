@@ -66,10 +66,25 @@ alias seeImage='kitty icat'
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
 #aliases for emacs doom 
-alias emacsd='doom run'
+#-> open in Emacs GUI, apart from the term.
+alias ed='doom run'
+alias edA='doom run ~/Documentos/org/agendaOrgSyncthing/ToDo.org'
+#-> open in the term.
+alias edt='doom run -nw'
+alias edtA='doom run -nw ~/Documentos/org/agendaOrgSyncthing/ToDo.org'
+
+#aliases for changing the ufw rules
+alias opufw='sudo nvim /etc/ufw/before.rules'
 
 #aliases for timer script
 alias timer='$HOME/Documentos/Scripts/alarm/./timer.sh'
+
+#alises for NeoVim
+alias nv='nvim'
+
+#alises for Tree Function
+#-> if you write the PID after the command pidTree you can see only the subprocesses that creates a determinate process
+alias pidTree='pstree -aps'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then

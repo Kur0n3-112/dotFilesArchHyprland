@@ -7,6 +7,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "dracula",
+      font = "Hack Nerd Font",
       -- colorscheme = "github_dark_high_contrast",
     },
   },

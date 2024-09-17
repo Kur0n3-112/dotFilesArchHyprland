@@ -83,7 +83,7 @@
 ;;AGENDA MODE
 
 (after! org
-  (setq org-agenda-files '("~/Documentos/org/agendaOrg/NEWagendaKur.org")))
+  (setq org-agenda-files '("~/Documentos/org/agendaOrg/ToDo.org")))
 
 (setq
    ;; org-fancy-priorities-list '("[A]" "[B]" "[C]")
@@ -112,3 +112,6 @@
 
           (agenda "")
           (alltodo "")))))
+
+;;This makes that when you set a TODO item DONE it sets the time when you close the item.
+(setq org-log-done 'time)

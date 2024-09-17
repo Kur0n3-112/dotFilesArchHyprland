@@ -20,7 +20,7 @@ configuration {
 }
 
 /* ---- Load wallust colors ---- */
-@theme "~/.config/rofi/colorScheme/kurColorSchemeRofi.rasi"
+//@theme "~/.config/rofi/colorScheme/kurColorSchemeRofi.rasi"
 
 /* ---- Global Properties ---- */
 * {
@@ -235,3 +235,4 @@ error-message {
     background-color:            @background-alt;
     text-color:                  @background;
 }
+@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
