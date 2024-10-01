@@ -294,12 +294,11 @@
 		}
 	}
 },
-"actions": {
-	"on-click-right": "mode",
-	"on-click-forward": "tz_up",
-	"on-click-backward": "tz_down",
-	"on-scroll-up": "shift_up",
-	"on-scroll-down": "shift_down"
+"clock#ScriptAxenide": {
+	"interval": 1,
+	"timezone": "Europe/Madrid",
+	"format": " {:%H:%M - %d %B, %A}",
+	"on-click": "~/.config/rofi/calendar/calendar.sh",
 },
 "clock#kur": {
 	"interval": 1,

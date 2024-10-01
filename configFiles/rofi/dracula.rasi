@@ -29,6 +29,7 @@
     handle-colour:        #202329;
     alternate-background: #282c34;
     border-colour:        #ff5555;
+    bordercolour:        #ff5555;
 
 active-background: #1E2127;
 active-foreground: #E2E8E7;

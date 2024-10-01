@@ -21,7 +21,7 @@
   "custom/separator#line",
   "cpu#kur2",
   "custom/gpuUsage",
-	"memory#kur2",
+  "memory#kur2",
   "custom/CPUTemp#Kur",
   "custom/gpuTemp",
 	"disk#kur2",
@@ -32,7 +32,7 @@
   "custom/separator#line",
   "custom/swaync",
   "custom/separator#dot-line",
-	"hyprland/workspaces#num", 
+  "hyprland/workspaces#num",
   "custom/separator#dot-line",
   "custom/idle_inhibitor",
   "custom/separator#line",
@@ -76,7 +76,7 @@
 
 "modules-center": [
   "custom/separator#line",
-  "clock#kur",
+  "clock#ScriptAxenide",
   "custom/separator#line",
 	],
 

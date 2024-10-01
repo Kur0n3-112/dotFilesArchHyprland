@@ -24,6 +24,11 @@ zstyle ':omz:update' mode reminder
 # Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
 pokemon-colorscripts -r
 
+##NOTE ALISES START
+
+KurScriptsDir="$HOME/Documentos/Scripts/\[01\]\ Kur"
+RedditScriptsDir="$HOME/Documentos/Scripts/\[02\]\ Reddit"
+
 # force zsh to show the complete history
 alias history="history 0"
 
@@ -51,7 +56,7 @@ alias lt='ls --tree'
 #alias notepad=''
 
 #aliases for vm remote viewer session
-alias vmScreens='~/Documentos/Scripts/vm_manager/startRemoteViewer.sh'
+alias vmScreens="$KurScriptsDir/vm_manager/startRemoteViewer.sh"
 
 #aliases for explorer
 alias fileExplorer='thunar'
@@ -77,7 +82,7 @@ alias edtA='doom run -nw ~/Documentos/org/agendaOrgSyncthing/ToDo.org'
 alias opufw='sudo nvim /etc/ufw/before.rules'
 
 #aliases for timer script
-alias timer='$HOME/Documentos/Scripts/alarm/./timer.sh'
+alias timer="$KurScriptsDir/alarm/./timer.sh"
 
 #alises for NeoVim
 alias nv='nvim'

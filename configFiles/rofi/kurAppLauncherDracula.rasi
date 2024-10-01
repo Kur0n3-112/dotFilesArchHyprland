@@ -67,7 +67,7 @@ configuration {
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: @drac-bgd;
+    bordercolor: @drac-red;
 }
 
 /*****----- Main Window -----*****/
@@ -85,8 +85,8 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      1px solid;
-    border-radius:               1px;
+    border:                      2px solid;
+    border-radius:               0px;
     border-color:                @bordercolor;
     cursor:                      "default";
     background-color:            @background-colour;
