@@ -26,8 +26,9 @@ pokemon-colorscripts -r
 
 ##NOTE ALISES START
 
-KurScriptsDir="$HOME/Documentos/Scripts/\[01\]\ Kur"
-RedditScriptsDir="$HOME/Documentos/Scripts/\[02\]\ Reddit"
+KurScriptsDir="$HOME/Documentos/Scripts/KurFolder"
+RedditScriptsDir="$HOME/Documentos/Scripts/RedditFolder"
+OrgFilesDir="$HOME/Documentos/org"
 
 # force zsh to show the complete history
 alias history="history 0"
@@ -72,11 +73,14 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 
 #aliases for emacs doom 
 #-> open in Emacs GUI, apart from the term.
-alias ed='doom run'
-alias edA='doom run ~/Documentos/org/agendaOrgSyncthing/ToDo.org'
+#alias ed='doom run'
+#alias edA="doom run $OrgFilesDir/kurOrgFiles/ToDo.org"
+#-> same but for emacs client
+alias ed="emacsclient -c -a 'emacs'"
+alias edA="emacsclient -c -a 'emacs' $OrgFilesDir/kurOrgFiles/ToDo.org"
 #-> open in the term.
 alias edt='doom run -nw'
-alias edtA='doom run -nw ~/Documentos/org/agendaOrgSyncthing/ToDo.org'
+alias edtA="doom run -nw $OrgFilesDir/kurOrgFiles/ToDo.org"
 
 #aliases for changing the ufw rules
 alias opufw='sudo nvim /etc/ufw/before.rules'
