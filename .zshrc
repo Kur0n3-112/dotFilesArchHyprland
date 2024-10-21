@@ -3,7 +3,8 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="xiong-chiamiov-plus"
+ZSH_THEME="nicoulaj"
+#ZSH_THEME="xiong-chiamiov-plus"
 #ZSH_THEME="funky"
 
 plugins=( 
@@ -11,6 +12,7 @@ plugins=(
     archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
+    dirhistory
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -48,30 +50,31 @@ alias codium='flatpak run com.vscodium.codium'
 
 #aliases for lsd
 alias ls='lsd'
-alias l='ls -l'
+alias l='ls'
+alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-#aliases for fileEditor
-#alias notepad=''
+#alias for fileEditor
+alias notepad='gedit'
 
-#aliases for vm remote viewer session
+#alias for vm remote viewer session
 alias vmScreens="$KurScriptsDir/vm_manager/startRemoteViewer.sh"
 
-#aliases for explorer
+#alias for explorer
 alias fileExplorer='thunar'
 
-#aliases for see images in terminal
+#alias for see images in terminal
 alias seeImage='kitty icat'
 
-#aliases for cleaning ipc services running
+#alias for cleaning ipc services running
 #alias kill_ipcs='$HOME/Documentos/Scripts/./kill_ipcs.sh'
 
 #path for doom emacs
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
-#aliases for emacs doom 
+#alias for emacs doom
 #-> open in Emacs GUI, apart from the term.
 #alias ed='doom run'
 #alias edA="doom run $OrgFilesDir/kurOrgFiles/ToDo.org"
@@ -82,18 +85,25 @@ alias edA="emacsclient -c -a 'emacs' $OrgFilesDir/kurOrgFiles/ToDo.org"
 alias edt='doom run -nw'
 alias edtA="doom run -nw $OrgFilesDir/kurOrgFiles/ToDo.org"
 
-#aliases for changing the ufw rules
+#alias for changing the ufw rules
 alias opufw='sudo nvim /etc/ufw/before.rules'
 
-#aliases for timer script
+#alias for timer script
 alias timer="$KurScriptsDir/alarm/./timer.sh"
 
-#alises for NeoVim
+#alias for NeoVim
 alias nv='nvim'
 
-#alises for Tree Function
+#alias for Tree Function
 #-> if you write the PID after the command pidTree you can see only the subprocesses that creates a determinate process
 alias pidTree='pstree -aps'
+
+#alias for copy the files between org folders
+alias cpLocalToSync="$KurScriptsDir/cpOrg/cpLocalToSync.sh"
+alias cpSyncToLocal="$KurScriptsDir/cpOrg/cpSyncToLocal.sh"
+
+#alias for showing my schedule
+alias horario='kitty icat ~/Documentos/Horario_SoloMisHoras.png'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then

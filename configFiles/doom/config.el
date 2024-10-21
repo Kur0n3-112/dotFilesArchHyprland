@@ -1,14 +1,5 @@
-(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 15)
-      doom-variable-pitch-font (font-spec :family "Ubuntu Nerd Font" :size 10)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
       doom-symbol-font (font-spec :family "Symbols Nerd Font" :size 10))
-
-(setq doom-theme 'doom-dracula)
-
-(setq display-line-numbers-type t)
-
-(after! org
-  (setq org-directory "~/Documentos/org/kurOrgFiles")
-  (org-agenda-files '("/home/kur/Documentos/org/kurOrgFiles/school.org" "/home/kur/Documentos/org/kurOrgFiles/ToDo.org")))
 
 (setq
    ;; org-fancy-priorities-list '("[A]" "[B]" "[C]")

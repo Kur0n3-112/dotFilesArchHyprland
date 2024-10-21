@@ -388,7 +388,7 @@
 },
 
 "hyprland/language": {
-	"format": "Lang: {}",
+	"format": " : {short}",
 	"format-en": "US",
 	"format-tr": "Korea",
 	"keyboard-name": "at-translated-set-2-keyboard",
@@ -1062,5 +1062,11 @@
 			"tooltip-icon-size": 24
 		}
 	]
+},
+"custom/kbd_layout": {
+    "exec": "cat $HOME/.cache/kb_layout | tr -d ' '",
+    "format": " : {}",
+    "interval": 1,
+    "on-click": "~/.config/hypr/scripts/SwitchKeyboardLayout.sh"
 },
 }

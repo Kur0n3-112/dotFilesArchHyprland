@@ -4,31 +4,35 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 
-* General config.
+* TABLES OF CONTENTS :toc:
+- [[#general-config][GENERAL CONFIG]]
+  - [[#set-fonts][Set fonts.]]
+  - [[#set-theme][Set theme.]]
+  - [[#set-line-number][Set line number.]]
+- [[#custom-code][CUSTOM CODE]]
+  - [[#agenda-fancy-view][Agenda fancy view.]]
+- [[#modules-config][MODULES CONFIG]]
+  - [[#latex-config][LaTEX Config]]
+- [[#default-doom-config][Default doom config.]]
+
+* GENERAL CONFIG
 ** Set fonts.
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 15)
-      doom-variable-pitch-font (font-spec :family "Ubuntu Nerd Font" :size 10)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
       doom-symbol-font (font-spec :family "Symbols Nerd Font" :size 10))
 #+end_src
+
 ** Set theme.
 #+begin_src emacs-lisp
 (setq doom-theme 'doom-dracula)
-#+end_src
+#+nord
+
 ** Set line number.
 #+begin_src emacs-lisp
 (setq display-line-numbers-type t)
 #+end_src
-** Set org agenda files.
-#+begin_src emacs-lisp
-(after! org
-  (setq org-directory "~/Documentos/org/kurOrgFiles")
-  (org-agenda-files '("/home/kur/Documentos/org/kurOrgFiles/school.org" "/home/kur/Documentos/org/kurOrgFiles/ToDo.org")))
-#+end_src
-#+RESULTS:
-| /home/kur/Documentos/org/kurOrgFiles/school.org | /home/kur/Documentos/org/kurOrgFiles/ToDo.org |
 
-* Custom code.
+* CUSTOM CODE
 ** Agenda fancy view.
 #+begin_src emacs-lisp
 (setq
@@ -63,6 +67,11 @@
 (setq org-log-done 'time)
 #+end_src
 
+* MODULES CONFIG
+** LaTEX Config
+#+begin_src emacs-lisp
+(add-to-list 'TeX-view-program-selection
+             '(output-pdf "Zathura"))#+end_src
 * Default doom config.
 #+BEGIN_COMMENT
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-

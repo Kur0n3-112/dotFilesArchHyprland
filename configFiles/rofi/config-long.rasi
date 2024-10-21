@@ -2,7 +2,7 @@
 /* Main Config (long) */
 
 @import "~/.config/rofi/config-KurTheme"
-@import "~/.config/rofi/dracula"
+@import "~/.config/rofi/colorScheme.rasi"
 
 *{
   background-colour: @background;

@@ -41,6 +41,7 @@
 
 "modules-right": [
   "custom/separator#line",
+    "custom/kbd_layout",
 	"bluetooth#kur",
 	"network#kur",
 	"custom/updater#kur",
