@@ -9,6 +9,7 @@
   - [[#set-fonts][Set fonts.]]
   - [[#set-theme][Set theme.]]
   - [[#set-line-number][Set line number.]]
+  - [[#toggle-truncate-lines][toggle truncate lines.]]
 - [[#custom-code][CUSTOM CODE]]
   - [[#agenda-fancy-view][Agenda fancy view.]]
 - [[#modules-config][MODULES CONFIG]]
@@ -25,11 +26,25 @@
 ** Set theme.
 #+begin_src emacs-lisp
 (setq doom-theme 'doom-dracula)
-#+nord
+#+end_src
 
 ** Set line number.
 #+begin_src emacs-lisp
-(setq display-line-numbers-type t)
+(global-display-line-numbers-mode t)  ; Activa los números de línea globalmente
+(setq display-line-numbers-type 'relative)  ; Configura los números de línea relativos
+#+end_src
+** toggle truncate lines.
+#+begin_src emacs-lisp
+;;(setq-default truncate-lines non-nil)
+;;(setq-default toggle-truncate-lines l) ;; esta tambien funciona pero he preferido activar la otra.
+;;(add-hook 'c-mode-hook (lambda () (setq truncate-lines nil)))
+;;(add-hook 'latex-mode-hook (lambda () (setq truncate-lines t)))
+(defun my-c-mode-config ()
+  "Called in `c-mode-hook'."
+  (setq truncate-lines nil))
+
+(add-hook 'c-mode-hook #'my-c-mode-config)
+
 #+end_src
 
 * CUSTOM CODE

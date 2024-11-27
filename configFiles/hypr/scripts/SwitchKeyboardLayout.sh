@@ -1,5 +1,4 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # This is for changing kb_layouts. Set kb_layouts in $settings_file
 
 layout_f="$HOME/.cache/kb_layout"
@@ -8,7 +7,7 @@ notif="$HOME/.config/swaync/images/bell.png"
 
 # Check if ~/.cache/kb_layout exists and create it with a default layout from Settings.conf if not found
 if [ ! -f "$layout_f" ]; then
-  default_layout=$(grep 'kb_layout=*' "$settings_file" | cut -d '=' -f 2 | cut -d ',' -f 1 2>/dev/null)
+  default_layout=$(grep 'kb_layout =' "$settings_file" | cut -d '=' -f 2 | cut -d ',' -f 1 2>/dev/null)
   if [ -z "$default_layout" ]; then
   default_layout="us" # DEFAULT TO 'us' layout if Settings.conf or 'kb_layout' is not found
 fi
@@ -19,7 +18,7 @@ current_layout=$(cat "$layout_f")
 
 # Read keyboard layout settings from Settings.conf
 if [ -f "$settings_file" ]; then
-  kb_layout_line=$(grep 'kb_layout=*' "$settings_file" | cut -d '=' -f 2)
+  kb_layout_line=$(grep 'kb_layout =' "$settings_file" | cut -d '=' -f 2)
   IFS=',' read -ra layout_mapping <<< "$kb_layout_line"
 fi
 
@@ -42,4 +41,4 @@ hyprctl switchxkblayout "at-translated-set-2-keyboard" "$new_layout"
 echo "$new_layout" > "$layout_f"
 
 # Notification for the new keyboard layout
-notify-send -u low -i "$notif" "new KB_Layout: $new_layout"
+notify-send -t 650 -e -u low -i "$notif" "new KB_Layout: $new_layout"

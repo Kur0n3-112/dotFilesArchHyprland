@@ -24,7 +24,8 @@ zstyle ':omz:update' mode reminder
 
 # Display Pokemon-colorscripts
 # Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
-pokemon-colorscripts -r
+#pokemon-colorscripts -r
+$HOME/Documentos/03_Code/C/quotes/./showQuote
 
 ##NOTE ALISES START
 
@@ -99,11 +100,22 @@ alias nv='nvim'
 alias pidTree='pstree -aps'
 
 #alias for copy the files between org folders
-alias cpLocalToSync="$KurScriptsDir/cpOrg/cpLocalToSync.sh"
-alias cpSyncToLocal="$KurScriptsDir/cpOrg/cpSyncToLocal.sh"
+alias cpORGLocalToSync="$KurScriptsDir/cpOrg/cpLocalToSync.sh"
+alias cpORGSyncToLocal="$KurScriptsDir/cpOrg/cpSyncToLocal.sh"
 
 #alias for showing my schedule
 alias horario='kitty icat ~/Documentos/Horario_SoloMisHoras.png'
+
+#alias for deleting all the documents that are not .tex
+alias rmTex="$KurScriptsDir/rmTex.sh"
+
+alias latexToPdf="latexmk -interaction=nonstopmode -pdf"
+
+#alias for deleting all the content of the cliphist history
+alias rmCliphist="$KurScriptsDir/rmAllCliphistContent.sh"
+
+
+export PATH="$HOME/Descargas/gitClone/tmux-sessionizer:$PATH"
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then

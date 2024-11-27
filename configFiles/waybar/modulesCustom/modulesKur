@@ -463,11 +463,11 @@
   "interval": 1,
 	"format": {
 		"numlock": "N {icon}",
-		"capslock": "󰪛 {icon}",
+		"capslock": "CAPS: {icon}",
 	},
 	"format-icons": {
-		"locked": "",
-		"unlocked": ""
+		"locked": "1",
+		"unlocked": "0"
 	},
 },
 "memory": {
@@ -792,7 +792,7 @@
 	"exec": "echo ; echo 󱓟 app launcher",
 	"interval": 86400, // once every day
 	"tooltip": false,
-	"on-click": "pkill rofi || rofi -show drun -modi drun,run -theme ~/.config/rofi/kurAppLauncher.rasi",
+	"on-click": "pkill rofi || rofi -show drun -modi drun,run -theme ~/.config/rofi/kurAppLauncherDracula.rasi",
 	//"on-click-middle": "~/.config/hypr/UserScripts/WallpaperSelect.sh",
 	//"on-click-right": "~/.config/hypr/scripts/WaybarLayout.sh",
 },

@@ -36,12 +36,12 @@
   "custom/separator#dot-line",
   "custom/idle_inhibitor",
   "custom/separator#line",
-  "custom/hint",
-	], 
+	],
 
 "modules-right": [
   "custom/separator#line",
-    "custom/kbd_layout",
+"keyboard-state#kur",
+  "custom/kbd_layout",
 	"bluetooth#kur",
 	"network#kur",
 	"custom/updater#kur",

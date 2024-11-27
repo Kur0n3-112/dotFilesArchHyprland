@@ -1,5 +1,20 @@
 (setq doom-font (font-spec :family "JetBrains Mono" :size 15)
-      doom-symbol-font (font-spec :family "Symbols Nerd Font" :size 10))
+      doom-symbol-font (font-spec :family "Hack Nerd Font" :size 10))
+
+(setq doom-theme 'doom-dracula)
+
+(global-display-line-numbers-mode t)  ; Activa los números de línea globalmente
+(setq display-line-numbers-type 'relative)  ; Configura los números de línea relativos
+
+;;(setq-default truncate-lines non-nil)
+;;(setq-default toggle-truncate-lines l) ;; esta tambien funciona pero he preferido activar la otra.
+;;(add-hook 'c-mode-hook (lambda () (setq truncate-lines nil)))
+;;(add-hook 'latex-mode-hook (lambda () (setq truncate-lines t)))
+(defun my-c-mode-config ()
+  "Called in `c-mode-hook'."
+  (setq truncate-lines nil))
+
+(add-hook 'c-mode-hook #'my-c-mode-config)
 
 (setq
    ;; org-fancy-priorities-list '("[A]" "[B]" "[C]")
