@@ -33,8 +33,10 @@ return require('packer').startup(function(use)
   use({'hrsh7th/cmp-nvim-lsp'})
 
   -- Mason
-  use({'williamboman/mason.nvim'})
-
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+  }
   -- Ale (Syntax checking on the fly)
   use({'dense-analysis/ale'})
 

@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/kur/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/kur/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/home/kur/.local/share/nvim/site/pack/packer/start/mason.nvim",
