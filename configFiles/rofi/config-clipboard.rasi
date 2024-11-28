@@ -3,7 +3,6 @@
 
 @import "~/.config/rofi/colorScheme.rasi"
 @import "~/.config/rofi/config-long.rasi"
-@import "~/.config/rofi/colorScheme.rasi"
 
 /* ---- Entry ---- */
 entry {

@@ -5,8 +5,8 @@
 @import "~/.config/rofi/colorScheme.rasi"
 
 *{
-  background-colour: @background;
-  bordercolor: @drac-red;
+  background-color: @bg;
+  border-color: @orange-1;
 }
 
 /* ---- Window ---- */
@@ -43,7 +43,7 @@ window {
     padding:                     0px;
     border:                      2px solid;
     border-radius:               0px;
-    border-color:                @bordercolor;
+    border-color:                @border-color;
     cursor:                      "default";
-    background-color:            @background-colour;
+    background-color:            @background-color;
 }

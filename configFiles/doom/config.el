@@ -1,7 +1,7 @@
 (setq doom-font (font-spec :family "JetBrains Mono" :size 15)
       doom-symbol-font (font-spec :family "Hack Nerd Font" :size 10))
 
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-gruvbox)
 
 (global-display-line-numbers-mode t)  ; Activa los números de línea globalmente
 (setq display-line-numbers-type 'relative)  ; Configura los números de línea relativos

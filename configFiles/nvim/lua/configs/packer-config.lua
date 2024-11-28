@@ -40,6 +40,10 @@ return require('packer').startup(function(use)
   -- Ale (Syntax checking on the fly)
   use({'dense-analysis/ale'})
 
-  -- Packer can manage itself
-  use({'Mofiqul/dracula.nvim'})
+  -- Dracula color scheme 
+  --use({'Mofiqul/dracula.nvim'})
+
+  -- Gruvbox color scheme 
+  use({'morhetz/gruvbox'})
+
  end)
