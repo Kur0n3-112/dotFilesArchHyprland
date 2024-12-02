@@ -1,5 +1,5 @@
 (setq doom-font (font-spec :family "JetBrains Mono" :size 15)
-      doom-symbol-font (font-spec :family "Hack Nerd Font" :size 10))
+      doom-symbol-font (font-spec :family "Symbols Nerd Font" :size 10))
 
 (setq doom-theme 'doom-gruvbox)
 
@@ -46,3 +46,4 @@
 
 ;; This makes that when you set a TODO item DONE it sets the time when you close the item.
 (setq org-log-done 'time)
+;;(setq org-agenda-span 'month)  ;; Show a full month

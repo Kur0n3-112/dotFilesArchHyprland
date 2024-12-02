@@ -27,6 +27,11 @@ zstyle ':omz:update' mode reminder
 #pokemon-colorscripts -r
 $HOME/Documentos/03_Code/C/quotes/./showQuote
 
+#Keybinds
+bindkey "^B" backward-word
+bindkey "^E" forward-word
+bindkey -s "^f" 'tmux-sessionizer-run\n'
+
 ##NOTE ALISES START
 
 KurScriptsDir="$HOME/Documentos/Scripts/KurFolder"
@@ -77,11 +82,11 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 
 #alias for emacs doom
 #-> open in Emacs GUI, apart from the term.
-#alias ed='doom run'
-#alias edA="doom run $OrgFilesDir/kurOrgFiles/ToDo.org"
+alias ed='doom run'
+alias edA="doom run $OrgFilesDir/kurOrgFiles/ToDo.org"
 #-> same but for emacs client
-alias ed="emacsclient -c -a 'emacs'"
-alias edA="emacsclient -c -a 'emacs' $OrgFilesDir/kurOrgFiles/ToDo.org"
+#alias ed="emacsclient -c -a 'emacs'"
+#alias edA="emacsclient -c -a 'emacs' $OrgFilesDir/kurOrgFiles/ToDo.org"
 #-> open in the term.
 alias edt='doom run -nw'
 alias edtA="doom run -nw $OrgFilesDir/kurOrgFiles/ToDo.org"
@@ -115,7 +120,12 @@ alias latexToPdf="latexmk -interaction=nonstopmode -pdf"
 alias rmCliphist="$KurScriptsDir/rmAllCliphistContent.sh"
 
 
+#alias for tmux-sessionizer
 export PATH="$HOME/Descargas/gitClone/tmux-sessionizer:$PATH"
+
+function tmux-sessionizer-run(){
+    $HOME/Descargas/gitClone/tmux-sessionizer/tmux-sessionizer
+}
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then

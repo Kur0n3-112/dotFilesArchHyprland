@@ -9,9 +9,7 @@ vim.opt.signcolumn = 'yes'
 -- This should be executed before you configure any language server
 local lspconfig_defaults = require('lspconfig').util.default_config
 lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lspconfig_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
+  'force', lspconfig_defaults.capabilities, require('cmp_nvim_lsp').default_capabilities()
 )
 
 -- This is where you enable features that only work
@@ -31,6 +29,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { buffer = event.buf })
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { buffer = event.buf })
+    vim.keymap.set('n', '<space>', vim.diagnostic.open_float, { buffer = event.buf })
+    vim.api.nvim_create_user_command('Dllist', vim.diagnostic.setloclist, {})
+    vim.api.nvim_create_user_command('Dclist', vim.diagnostic.setqflist, {})
   end,
 })
 
@@ -40,6 +43,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 --require('lspconfig').gleam.setup({})
 --require('lspconfig').ocamllsp.setup({})
 require('lspconfig').clangd.setup({})
+require('lspconfig').lua_ls.setup({})
 require('lspconfig').textlsp.setup({})
 
 local cmp = require('cmp')
