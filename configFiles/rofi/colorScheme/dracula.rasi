@@ -54,4 +54,6 @@ selected-urgent-foreground: @drac-fgd;
 
 background-color: @drac-bgd;
 
+bg: @background;
+bc: @border-colour;
 }

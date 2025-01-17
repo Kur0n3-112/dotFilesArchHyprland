@@ -1,50 +1,28 @@
-/* ----------- Kur's Dracula Swaync Style Set -------- */
+/* ----------- Kur's Gruvbox Swaync Style Set -------- */
 /* swaync colors - wallust from waybar.css */
 
-@define-color noti-border-color @orange-1;
-@define-color noti-letters-color @fg0;
-@define-color noti-bg @bg;
-@define-color noti-bg-alt @bg0;
-@define-color noti-bg-hover @red-2;
-@define-color text-color @fg0;
-@define-color text-color-alt @fg1;
-@define-color text-color-disabled @bg2;
-@define-color text-color-time @green-1;
+@define-color noti-border-color @red;
+@define-color noti-letters-color @purple;
+@define-color noti-bg @background;
+@define-color noti-bg-alt @background-darker;
+@define-color noti-bg-hover @red;
+@define-color text-color @purple;
+@define-color text-color-alt @pink;
+@define-color text-color-disabled @red;
+@define-color text-color-time @green;
 
-@define-color bg #282828;
-@define-color red #cc241d;
-@define-color green-1 #98971a;
-@define-color yellow-1 #d79921;
-@define-color blue-1 #458588;
-@define-color purple-1 #b16286;
-@define-color aqua-1 #689d6a;
-@define-color gray-1 #a89984;
-
-@define-color gray-2 #928374;
-@define-color red-2 #fb4934;
-@define-color green-2 #b8bb26;
-@define-color yellow-2 #fabd2f;
-@define-color blue-2 #83a598;
-@define-color purple-2 #d3869b;
-@define-color aqua-2 #8ec07c;
-@define-color fg #ebdbb2;
-
-@define-color bg0-h #1d2021;
-@define-color bg0 #282828;
-@define-color bg1 #3c3836;
-@define-color bg2 #504945;
-@define-color bg3 #665c54;
-@define-color bg4 #7c6f64;
-@define-color gray-3 #928374;
-@define-color orange-1 #d65d0e;
-
-@define-color bg0-s #32302f;
-@define-color fg4 #a89984;
-@define-color fg3 #bdae93;
-@define-color fg2 #d5c4a1;
-@define-color fg1 #ebdbb2;
-@define-color fg0 #fbf1c7;
-@define-color orange-2 #fe8019;
+@define-color background-darker rgba(30, 31, 41, 230);
+@define-color background #282a36;
+@define-color selection #44475a;
+@define-color foreground #f8f8f2;
+@define-color comment #6272a4;
+@define-color cyan #8be9fd;
+@define-color green #50fa7b;
+@define-color orange #ffb86c;
+@define-color pink #ff79c6;
+@define-color purple #bd93f9;
+@define-color red #ff5555;
+@define-color yellow #f1fa8c;
 
 * {
   font-family: "Hack Nerd Font Mono";

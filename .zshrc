@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CONFIG_DIR="$HOME/.config/zsh"
 
 ZSH_THEME="nicoulaj"
 #ZSH_THEME="xiong-chiamiov-plus"
@@ -12,10 +13,13 @@ plugins=(
     archlinux
     zsh-autosuggestions
     zsh-syntax-highlighting
-    dirhistory
+#    dirhistory
 )
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
+
+#source /usr/share/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#source "$ZSH_CONFIG_DIR/setup_autocomplete.sh"
 
 # Check archlinux plugin commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
@@ -29,8 +33,10 @@ $HOME/Documentos/03_Code/C/quotes/./showQuote
 
 #Keybinds
 bindkey "^B" backward-word
-bindkey "^E" forward-word
-bindkey -s "^f" 'tmux-sessionizer-run\n'
+bindkey "^F" forward-word
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey -s "^T" 'tmux-sessionizer-run\n'
 
 ##NOTE ALISES START
 
@@ -82,17 +88,17 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 
 #alias for emacs doom
 #-> open in Emacs GUI, apart from the term.
-alias ed='doom run'
-alias edA="doom run $OrgFilesDir/kurOrgFiles/ToDo.org"
+#alias ed='doom run'
+#alias edA="doom run $OrgFilesDir/kurOrgFiles/ToDo.org"
 #-> same but for emacs client
-#alias ed="emacsclient -c -a 'emacs'"
-#alias edA="emacsclient -c -a 'emacs' $OrgFilesDir/kurOrgFiles/ToDo.org"
+alias ed="emacsclient -c -a 'emacs'"
+alias edA="emacsclient -c -a 'emacs' $OrgFilesDir/kurOrgFiles/ToDo.org"
 #-> open in the term.
 alias edt='doom run -nw'
 alias edtA="doom run -nw $OrgFilesDir/kurOrgFiles/ToDo.org"
 
 #alias for changing the ufw rules
-alias opufw='sudo nvim /etc/ufw/before.rules'
+alias ufwChangeRules='sudo nvim /etc/ufw/before.rules'
 
 #alias for timer script
 alias timer="$KurScriptsDir/alarm/./timer.sh"
@@ -119,6 +125,18 @@ alias latexToPdf="latexmk -interaction=nonstopmode -pdf"
 #alias for deleting all the content of the cliphist history
 alias rmCliphist="$KurScriptsDir/rmAllCliphistContent.sh"
 
+#alias for python
+alias py='python'
+alias py3='python3'
+
+#alias for ranger
+alias rn='ranger'
+
+#alias for script fix kbd layout
+alias kbdLayoutFix="$KurScriptsDir/fix/kbdLayoutFix.sh"
+
+#alias for script controlls bridge connection for Qemu/KVM
+alias nmcliBridge="$KurScriptsDir/nmcli/nmcliBridge.sh"
 
 #alias for tmux-sessionizer
 export PATH="$HOME/Descargas/gitClone/tmux-sessionizer:$PATH"
@@ -137,5 +155,11 @@ fi
 # enable command-not-found if installed
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
+fi
+
+# Si estamos saliendo de tmux, restaurar el cursor de Kitty
+if [ -z "$TMUX" ]; then
+  # Enviar la secuencia para restaurar el cursor a su configuración predeterminada
+  echo -e '\033[1 q'
 fi
 

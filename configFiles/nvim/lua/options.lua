@@ -37,7 +37,7 @@ vim.g.mapleader = " "
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 
 -- Config for reseting the cursor in nvim exit, because in Tmux it is needed
---vim.api.nvim_create_autocmd("VimLeave", {
---  group = vim.api.nvim_create_augroup("ResetCursor", {}),
---  command = "set guicursor=a:ver25",
---})
+vim.api.nvim_create_autocmd("VimLeave", {
+  group = vim.api.nvim_create_augroup("ResetCursor", {}),
+  command = "set guicursor=a:ver25",
+})

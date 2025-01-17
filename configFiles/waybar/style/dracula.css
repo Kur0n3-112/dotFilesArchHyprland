@@ -5,6 +5,8 @@
   font-family: Hack Nerd Font;
   font-size: 10pt;
   min-height: 0;
+  animation: none;
+  transition: none;
 }
 window#waybar {
   opacity: 1;
@@ -91,6 +93,7 @@ window#waybar {
 #custom-menu,
 #custom-power_vertical,
 #custom-power,
+#custom-CPUTemp,
 #custom-gpuTemp,
 #custom-swaync,
 #custom-updater,

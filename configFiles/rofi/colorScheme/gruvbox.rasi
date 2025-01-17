@@ -71,5 +71,6 @@ orange-2: #fe8019;
  selected-urgent-foreground: @fg;
  
  background-color: @bg;
+ bc: @border-colour;
 
 }

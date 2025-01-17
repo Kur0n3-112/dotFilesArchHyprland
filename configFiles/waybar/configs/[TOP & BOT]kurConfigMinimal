@@ -40,10 +40,10 @@
 
 "modules-right": [
   "custom/separator#line",
-"keyboard-state#kur",
+  "custom/weather",
   "custom/kbd_layout",
 	"bluetooth#kur",
-	"network#kur",
+//	"network#kur",
 	"custom/updater#kur",
   "custom/separator#line",
 	"custom/lock", 
@@ -76,10 +76,10 @@
 	 ],
 
 "modules-center": [
-  "custom/separator#line",
-  "clock#ScriptAxenide",
-  "custom/separator#line",
-	],
+    "custom/separator#line",
+    "clock#kur",
+    "custom/separator#line",
+],
 
 "modules-right": [
   "privacy",

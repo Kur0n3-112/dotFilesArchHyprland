@@ -36,12 +36,6 @@
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
 	"persistent-workspaces": {
-		"1": [],
-		"2": [],
-		"3": [],
-		"4": [],
-		"5": [],
-		"6": [],
 	},
 	"format-icons": {
 		"1": "1",
@@ -297,17 +291,10 @@
 "clock#ScriptAxenide": {
 	"interval": 1,
 	"timezone": "Europe/Madrid",
+	"on-click": "pkill rofi || ~/.config/rofi/calendar/calendar.sh",
 	"format": " {:%H:%M - %d %B, %A}",
-	"on-click": "~/.config/rofi/calendar/calendar.sh",
-},
-"clock#kur": {
-	"interval": 1,
-	//"format": " {:%I:%M %p}", // AM PM format
-  "timezone": "Europe/Madrid",
-	"format": " {:%H:%M - %d %B, %A}",
-	//"format-alt": " {:%H:%M}",
-  "tooltip-format": "{tz_list}<tt><small>{calendar}</small></tt>",
-  "calendar": {
+	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+	"calendar": {
 		"mode": "year",
 		"mode-mon-col": 3,
 		"weeks-pos": "right",
@@ -317,17 +304,33 @@
 			"days": "<span color='#ecc6d9'><b>{}</b></span>",
 			"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
 			"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-			"today": "<span color='#feff26'><b><u>{}</u></b></span>"
+			"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
 		}
-	}
+    }
 },
-"actions": {
-	"on-click-right": "mode",
-	"on-click-forward": "tz_up",
-	"on-click-backward": "tz_down",
-	"on-scroll-up": "shift_up",
-	"on-scroll-down": "shift_down"
+"clock#kur": {
+    "interval": 1,
+    //"format": " {:%I:%M %p}", // AM PM format
+    "timezone": "Europe/Madrid",
+    "on-click": "ghostty -e calcurse",
+    "format": " {:%H:%M - %d %B, %A}",
+    //"format-alt": " {:%H:%M}",
+    "tooltip-format": "{tz_list}<tt><small>{calendar}</small></tt>",
+    "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "format": {
+            "months": "<span color='#ffead3'><b>{}</b></span>",
+            "days": "<span color='#ecc6d9'><b>{}</b></span>",
+            "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+            "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+            "today": "<span color='#feff26'><b><u>{}</u></b></span>"
+        }
+    }
 },
+
 "cpu": {
 	"format": "{usage}% 󰍛",
 	"interval": 1,
@@ -869,7 +872,7 @@
 	"format": "{}",
 	"format-alt": "{alt}: {}",
 	"format-alt-click": "click",
-"interval": 3600,
+"interval": 6000,
 "return-type": "json",
 "exec": "~/.config/hypr/UserScripts/Weather.sh",
 //"exec": "~/.config/hypr/UserScripts/Weather.py",
@@ -881,7 +884,7 @@
   "interval": 10,
   "exec": "sensors | grep k10temp-pci-00c3 -C 3 | grep Tccd1  | awk '{print $2}' | tr -d 'Tccd:' | tr -d ' ' | tr -d '+'",
   "tooltip": true,
-	"on-click-right": "kitty --title nvtop sh -c 'nvtop'",
+	"on-click": "kitty --title nvtop sh -c 'nvtop'",
 },
 
 // Separators

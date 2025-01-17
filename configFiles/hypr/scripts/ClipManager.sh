@@ -30,10 +30,12 @@ while true; do
             esac
             ;;
         10)
+            #CTRL+DEL
             cliphist delete <<<"$result"
             ;;
         11)
-            cliphist wipe
+            #ALT+DEL
+            ~/Documentos/Scripts/KurFolder/rmAllCliphistContent.sh
             ;;
     esac
 done

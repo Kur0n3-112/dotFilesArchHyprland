@@ -6,7 +6,7 @@
 
 *{
   background-color: @bg;
-  border-color: @orange-1;
+  border-color: @bc;
 }
 
 /* ---- Window ---- */

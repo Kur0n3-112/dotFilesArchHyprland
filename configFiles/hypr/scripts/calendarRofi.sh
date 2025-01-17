@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cal | rofi -i -dmenu -config ~/.config/rofi/config-calendar.rasi
+cal -y $(date +"%Y")| rofi -i -dmenu -config ~/.config/rofi/config-calendar.rasi

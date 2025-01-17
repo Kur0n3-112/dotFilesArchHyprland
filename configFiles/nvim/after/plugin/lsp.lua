@@ -37,16 +37,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- You'll find a list of language servers here:
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
--- These are example language servers. 
---require('lspconfig').gleam.setup({})
---require('lspconfig').ocamllsp.setup({})
-require('lspconfig').clangd.setup({})
-require('lspconfig').lua_ls.setup({})
-require('lspconfig').textlsp.setup({})
-
 local cmp = require('cmp')
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    -- confirm completion
+    ['<C-y>'] = cmp.mapping.confirm({select = true}),
+
+    -- scroll up and down the documentation window
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+  }),
+})
 
 cmp.setup({
   sources = {
@@ -60,3 +61,33 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({}),
 })
+
+-- You'll find a list of language servers here:
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+-- These are example language servers. 
+--require('lspconfig').gleam.setup({})
+--require('lspconfig').ocamllsp.setup({})
+local lsp = require("lsp-zero")
+
+require('lspconfig').clangd.setup({})
+require('lspconfig').lua_ls.setup({})
+require('lspconfig').texlab.setup({})
+require('lspconfig').pyright.setup({})
+require('lspconfig').bashls.setup({})
+require("mason").setup({})
+    require("mason-lspconfig").setup({
+      ensure_installed = {
+        "clangd",
+        "lua_ls",
+        "texlab",
+        "pyright",
+        "bashls",
+      },
+      handlers = {
+        lsp.default_setup,
+        lua_ls = function()
+          local lua_opts = lsp.nvim_lua_ls()
+          require("lspconfig").lua_ls.setup(lua_opts)
+        end,
+      },
+    })

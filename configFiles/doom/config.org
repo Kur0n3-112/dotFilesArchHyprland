@@ -3,6 +3,7 @@
 #+DESCRIPTION: Kur personal Doom/Emacs config.
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
+#+PROPERTY: header-args :tangle config.el
 
 * TABLES OF CONTENTS :toc:
 - [[#general-config][GENERAL CONFIG]]
@@ -10,24 +11,26 @@
   - [[#set-theme][Set theme.]]
   - [[#set-line-number][Set line number.]]
   - [[#toggle-truncate-lines][toggle truncate lines.]]
-- [[#custom-code][CUSTOM CODE]]
+  - [[#set-clipboard-for-term-mode][Set clipboard for term mode]]
+- [[#custom-code][Custom CODE]]
   - [[#agenda-fancy-view][Agenda fancy view.]]
+  - [[#see-white-spaces][See white spaces]]
+  - [[#see-habit-tracker][See habit tracker]]
 - [[#modules-config][MODULES CONFIG]]
-  - [[#latex-config][LaTEX Config]]
+  - [[#org-roam][Org-roam]]
+  - [[#org-roam-ui][Org-roam-ui]]
 - [[#default-doom-config][Default doom config.]]
 
 * GENERAL CONFIG
 ** Set fonts.
 #+begin_src emacs-lisp
-(setq doom-font (font-spec :family "JetBrains Mono" :size 15)
+(setq doom-font (font-spec :family "JetBrains Mono NL" :size 15)
       doom-symbol-font (font-spec :family "Symbols Nerd Font" :size 10))
 #+end_src
-
 ** Set theme.
 #+begin_src emacs-lisp
 (setq doom-theme 'doom-gruvbox)
 #+end_src
-
 ** Set line number.
 #+begin_src emacs-lisp
 (global-display-line-numbers-mode t)  ; Activa los números de línea globalmente
@@ -46,8 +49,29 @@
 (add-hook 'c-mode-hook #'my-c-mode-config)
 
 #+end_src
+** Set clipboard for term mode
+#+begin_src emacs-lisp
+;; Ensure we're in a Wayland session with cliphist available
+(when (executable-find "cliphist")
 
-* CUSTOM CODE
+  ;; Copy to clipboard using cliphist
+  (defun copy-to-clipboard (start end)
+    (interactive "r")
+    (let ((selection (buffer-substring-no-properties start end)))
+      (call-process-region start end "cliphist" nil nil nil "store")
+      (message "Copied to clipboard!")))
+
+  ;; Paste from clipboard using cliphist
+  (defun paste-from-clipboard ()
+    (interactive)
+    (let ((output (shell-command-to-string "cliphist list | head -n 1 | cliphist decode")))
+      (insert output)))
+
+  ;; Bind to keys
+  (global-set-key (kbd "C-c M-i") 'copy-to-clipboard)
+  (global-set-key (kbd "C-c M-p") 'paste-from-clipboard))
+#+end_src
+* Custom CODE
 ** Agenda fancy view.
 #+begin_src emacs-lisp
 (setq
@@ -82,12 +106,93 @@
 (setq org-log-done 'time)
 ;;(setq org-agenda-span 'month)  ;; Show a full month
 #+end_src
-
-* MODULES CONFIG
-** LaTEX Config
+** See white spaces
 #+begin_src emacs-lisp
-(add-to-list 'TeX-view-program-selection
-             '(output-pdf "Zathura"))#+end_src
+;;(setq whitespace-style '(face tabs spaces newline space-mark tab-mark newline-mark))
+(setq whitespace-style '(face tabs newline space-mark tab-mark newline-mark))
+(setq whitespace-space-regexp "\\(\u200B\\|[ \t]+\\)")
+(global-whitespace-mode 1)
+#+end_src
+** See habit tracker
+#+begin_src emacs-lisp
+;;(setq org-agenda-custom-commands
+;;      '(("h" "Daily habits"
+;;         ((agenda ""))
+;;         ((org-agenda-show-log t)
+;;          (org-agenda-ndays 7)
+;;          (org-agenda-log-mode-items '(state))
+;;          (org-agenda-skip-function '(org-agenda-skip-entry-if 'notregexp ":HABIT_DAILY:"))))
+;;        ;; other commands here
+;;        ))
+#+end_src
+* MODULES CONFIG
+** Org-roam
+#+begin_src emacs-lisp
+(setq org-roam-node-display-template
+      (concat "${type:15} ${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+
+(setq org-roam-capture-templates
+       '(("d" "default" plain
+          "%?"
+          :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                             "${title}\n")
+          :unnarrowed t)
+         ("c" "Ciberseguridad" plain
+          "%?"
+          :if-new (file+head "Ciberseguridad/Hack4u/IntroduccionHacking/${slug}.org"
+                             "${title}\n#+date: %U\n")
+          :unnarrowed t)
+         ("l" "linuxThings" plain
+          "%?"
+          :if-new (file+head "linuxThings/${slug}.org"
+                             "${title}\n#+date: %U\n")
+          :unnarrowed t)
+         ("g" "github and git" plain
+          "%?"
+          :if-new (file+head "cursos/mouredev/gitAndGithub/${slug}.org"
+                             "${title}\n#+date: %U\n")
+          :unnarrowed t)))
+
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory (file-truename "~/Documentos/05_Notes/orgRoam"))
+  (org-roam-completion-everywhere t)
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n c" . org-roam-capture)
+         ;; Dailies
+         ("C-c n j" . org-roam-dailies-capture-today))
+  :config
+  ;; If you're using a vertical completion framework, you might want a more informative completion interface
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode)
+  ;; If using org-roam-protocol
+  (require 'org-roam-protocol))
+#+end_src
+
+#+RESULTS:
+: org-roam-dailies-capture-today
+
+** Org-roam-ui
+#+begin_src emacs-lisp
+(use-package! websocket
+    :after org-roam)
+
+(use-package! org-roam-ui
+    :after org-roam ;; or :after org
+;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+;;         a hookable mode anymore, you're advised to pick something yourself
+;;         if you don't care about startup time, use
+;;  :hook (after-init . org-roam-ui-mode)
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
+#+end_src
 * Default doom config.
 #+BEGIN_COMMENT
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
