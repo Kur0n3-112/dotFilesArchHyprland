@@ -140,6 +140,8 @@ alias nmcliBridge="$KurScriptsDir/nmcli/nmcliBridge.sh"
 
 #alias for tmux-sessionizer
 export PATH="$HOME/Descargas/gitClone/tmux-sessionizer:$PATH"
+alias cpTmuxResurrectLocalToSync="$KurScriptsDir/cpTmuxResurrectLocalToSync.sh"
+alias cpTmuxResurrectSyncToLocal="$KurScriptsDir/cpTmuxResurrectSyncToLocal.sh"
 
 function tmux-sessionizer-run(){
     $HOME/Descargas/gitClone/tmux-sessionizer/tmux-sessionizer
