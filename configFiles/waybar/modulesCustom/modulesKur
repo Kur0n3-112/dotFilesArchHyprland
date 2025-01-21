@@ -312,7 +312,7 @@
     "interval": 1,
     //"format": " {:%I:%M %p}", // AM PM format
     "timezone": "Europe/Madrid",
-    "on-click": "ghostty -e calcurse",
+    "on-click": "",
     "format": " {:%H:%M - %d %B, %A}",
     //"format-alt": " {:%H:%M}",
     "tooltip-format": "{tz_list}<tt><small>{calendar}</small></tt>",
