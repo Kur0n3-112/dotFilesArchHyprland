@@ -74,6 +74,7 @@ require('lspconfig').lua_ls.setup({})
 require('lspconfig').texlab.setup({})
 require('lspconfig').pyright.setup({})
 require('lspconfig').bashls.setup({})
+require('lspconfig').rust_analyzer.setup({})
 require("mason").setup({})
     require("mason-lspconfig").setup({
       ensure_installed = {
@@ -82,6 +83,7 @@ require("mason").setup({})
         "texlab",
         "pyright",
         "bashls",
+        "rust_analyzer",
       },
       handlers = {
         lsp.default_setup,

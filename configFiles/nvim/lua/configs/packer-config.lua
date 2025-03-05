@@ -58,6 +58,19 @@ use {
   -- OilNvim (file explorer in a nvim buffer)
   use({'stevearc/oil.nvim'})
 
+  -- Rust Tools (Better Rust Development)
+  use 'simrat39/rust-tools.nvim'
+  --> Debugging
+  use 'mfussenegger/nvim-dap'
+
+  -- Vimtex
+  use 'lervag/vimtex'
+
+  -- Wich Key
+ use ({'folke/which-key.nvim'})
+
+--[=======================================================]--
+
   -- COLOR SCHEMES
   -- Dracula color scheme 
   use({'Mofiqul/dracula.nvim'})
