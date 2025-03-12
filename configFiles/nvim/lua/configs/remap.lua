@@ -106,4 +106,4 @@ vim.keymap.set("n", "<leader>ypp", "<cmd>:let @+ = fnamemodify(expand('%:d'), ':
 -- Copy the relative path to the actual file
 vim.keymap.set("n", "<leader>yp", "<cmd>:let @+ = fnamemodify(expand('%:h'), ':~')<CR><CR><cmd>echo 'Yank: Relative path copied to the clipboard.'<CR>")
 
-vim.keymap.set("n", "<leader>pvo", vim.cmd.Oil)
+vim.keymap.set("n", "<leader>so", vim.cmd.Oil)

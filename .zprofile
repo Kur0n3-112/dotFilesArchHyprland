@@ -7,7 +7,7 @@ export EDITOR="nvim"
 export TERM="kitty"
 export TERMINAL="kitty"
 export MUSPLAYER="vlc"
-export BROWSER="firefox"
+export BROWSER="qutebrowser"
 export BROWSER2="librewolf"
 # export DISPLAY=:0 # useful for some scripts
 

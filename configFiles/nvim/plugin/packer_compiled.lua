@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["CopilotChat.nvim"] = {
+    loaded = true,
+    path = "/home/kur/.local/share/nvim/site/pack/packer/start/CopilotChat.nvim",
+    url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
+  },
   ale = {
     loaded = true,
     path = "/home/kur/.local/share/nvim/site/pack/packer/start/ale",
@@ -83,6 +88,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kur/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/kur/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
   },
   ["dracula.nvim"] = {
     loaded = true,
@@ -189,6 +199,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kur/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/kur/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

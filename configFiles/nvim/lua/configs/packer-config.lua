@@ -69,6 +69,11 @@ use {
   -- Wich Key
  use ({'folke/which-key.nvim'})
 
+ -- Copilot
+ use 'github/copilot.vim'
+ use 'nvim-lua/plenary.nvim'
+ use 'CopilotC-Nvim/CopilotChat.nvim'
+
 --[=======================================================]--
 
   -- COLOR SCHEMES

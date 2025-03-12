@@ -19,6 +19,7 @@ require("plugins.trouble")
 require("plugins.undotree")
 require("plugins.rust-tools")
 require("plugins.vimtex")
+require("plugins.copilot")
 
 -- Configuración para ajustar secuencias de escape en tmux
 --vim.cmd([[
