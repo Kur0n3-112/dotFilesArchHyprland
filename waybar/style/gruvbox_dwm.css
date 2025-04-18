@@ -132,6 +132,7 @@ window#waybar {
 #custom-separator.blank,
 #custom-separator.blank_2,
 #custom-separator.blank_3,
+#custom-separator.line_dwm,
 #custom-idle_inhibitor {
   color: @fg_0;
   background: @bg;

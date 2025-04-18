@@ -1106,4 +1106,9 @@
 	"format": "CPU: {usage}%",
 	"interval": 5,
 },
+"custom/separator#line_dwm": {
+	"format": " | ",
+	"interval": "once",
+	"tooltip": false
+},
 }
