@@ -41,4 +41,8 @@ hyprctl switchxkblayout "at-translated-set-2-keyboard" "$new_layout"
 echo "$new_layout" > "$layout_f"
 
 # Notification for the new keyboard layout
-notify-send -t 650 -e -u low -i "$notif" "new KB_Layout: $new_layout"
+#-> Uncomment the line bellow to use notify-send with an icon
+#notify-send -t 650 -e -u low -i "$notif" "new KB_Layout: $new_layout"
+
+#-> Uncomment the line bellow to use notify-send without an icon
+notify-send -t 650 -e -u low "new KB_Layout: $new_layout"

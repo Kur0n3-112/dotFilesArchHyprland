@@ -420,12 +420,6 @@
 	"separate-outputs": true, // to separate the outputs if you have two screens
 	"offscreen-css": true,
 	"offscreen-css-text": "(inactive)",
-	"rewrite": {
-		"(.*) — Mozilla Firefox": " $1",
-		"(.*) - fish": "> [$1]",
-		"(.*) - zsh": "> [$1]",
-		"(.*) - $term": "> [$1]",
-	},
 },
 "idle_inhibitor": {
 	"format": "{icon}",

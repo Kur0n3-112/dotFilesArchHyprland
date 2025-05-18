@@ -15,26 +15,21 @@ file_exists() {
 }
 
 # Kill already running processes
-_ps=(waybar rofi swaync ags hyprpaper)
+#_ps=(waybar rofi swaync hyprpaper)
+_ps=(rofi hyprpaper)
 for _prs in "${_ps[@]}"; do
 	if pidof "${_prs}" >/dev/null; then
 		pkill "${_prs}"
 	fi
 done
 
-# quit ags
-ags -q
-
 sleep 0.3
 # Relaunch waybar
-waybar &
+#waybar &
 
 # relaunch swaync
-sleep 0.5
-swaync >/dev/null 2>&1 &
-
-# relaunch ags
-ags &
+#sleep 0.5
+#swaync >/dev/null 2>&1 &
 
 # relaunch hyprpaper
 hyprpaper &

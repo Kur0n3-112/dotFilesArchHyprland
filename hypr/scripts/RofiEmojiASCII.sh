@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sed '1,/^# # DATA # #$/d' $0 |
-	rofi -i -dmenu -config ~/.config/rofi/config-emoji.rasi |
+	rofi -i -dmenu -config ~/.config/rofi/config.rasi |
 	cut -f 1 | tr -d '\n' | wl-copy
 
 exit
